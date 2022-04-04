@@ -1,14 +1,71 @@
 /* Provide sufficient contrast against white background */
+.header {
+    width: 100vw;
+    left: 0;
+    top: 0;
+    position: fixed;
+    background-color: rgb(223, 0, 0);
+    height:10vh;
+}
 a {
   color: #0366d6;
 }
-
+.add {
+    padding:2vh 2vw;
+}
 code {
   color: #E01A76;
 }
-
+.white {
+    color: white !important;
+}
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+}
+.product-box {
+    padding: 1vh 2vw;
+    border-radius: 1vh 1vw;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-bottom: 3vh;
+    background-color:rgb(165, 23, 22);
+}
+body {
+    background-color:rgb(244, 244, 244);
+    margin-top:10vh;
+}
+.fixed-title {
+    top: 10vh;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    padding-left: 5vw;
+    position: fixed;
+    padding-right: 5vw;
+    background-color: rgb(244, 244, 244);
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 6fr 1fr 1fr 3fr;
+    margin:0;
+}
+.productlist{
+    margin-top:25vh;
+}
+.top-buttons{
+    margin:0vh 1vw;
+}
+.form{
+    margin:20vh auto 0px auto;
+    min-height:60vh;
+    max-height:80vh;
+}
+.icon {
+    padding-left: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.no-border{
+    border:0px;
 }

@@ -3,7 +3,10 @@
     text-align: center;
     word-break: break-all;
 }
-
+.title{
+    width:100vw;
+    margin:0px auto;
+}
 html { font-size: 14px; }
 
 @media (min-width: 768px) {

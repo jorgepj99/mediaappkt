@@ -7,7 +7,7 @@ using mediaappkt.Models;
 namespace mediaappkt.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class ProductsController : ControllerBase
     {
 
@@ -18,10 +18,16 @@ namespace mediaappkt.Controllers
             return db.products;
         }
         [HttpPost]
-        public bool Post([FromBody] AddProduct product)
+        public bool add([FromBody] AddProduct product)
         {
-            bool result = false;
-            return result;
+            ProductContext db = new ProductContext();
+            Products data = new Products();
+            data.name = product.name;
+            data.family = product.family;
+            data.description = product.description;
+            data.price = product.price;
+            db.Add(data);
+            return db.SaveChanges() == 1 ? true : false;
         }
     }
 }
