@@ -1,0 +1,81 @@
+swagger: "2.0"
+info:
+  description: "This is a Api Information about Media Appkt"
+  version: "1.0.0"
+  title: "Swagger Media Appkt"
+  contact:
+    email: "jorge.pablo.9@gmail.com"
+  license:
+    name: "MIT"
+host: "localhost"
+basePath: "/"
+tags:
+- name: "Products"
+  description: "Commands from .NET 5(C#) API"
+  externalDocs:
+    description: "Find app code"
+    url: "https://github.com/jorgepj99/mediaappkt"
+schemes:
+- "https"
+paths:
+  /products/getlist:
+    get:
+      tags:
+      - "Products"
+      summary: "Return all products on SQL Server Express"
+      description: ""
+      operationId: "get"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Pet object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Get-Product"
+      responses:
+        "200":
+          description: "Success"
+  /products/add:
+    post:
+      tags:
+      - "Products"
+      summary: "Add a new product to the SQL Server Express"
+      description: ""
+      operationId: "add"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Product object that needs to be added to the BBDD"
+        required: true
+        schema:
+          $ref: "#/definitions/Product"
+      responses:
+        "200":
+          description: "Success"
+definitions:
+  Get-Product:
+    type: "array"
+    items:
+      $ref: "#/definitions/Product"
+    xml:
+      name: "Products"
+  Product:
+    type: "object"
+    required:
+    - "name"
+    - "description"
+    - "family"
+    - "price"
+    properties:
+      name:
+        type: "string"
+        example: "Iphone 13"
+      description:
+        type: "string"
+        example: "Es un muy buen dispositivo"
+      family:
+        type: "string"
+        example: "Smartphones"
+      status:
+        type: "number"
+        example: 1280
