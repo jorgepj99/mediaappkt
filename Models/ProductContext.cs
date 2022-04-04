@@ -32,10 +32,9 @@ namespace mediaappkt.Models
         {
             modelBuilder.Entity<Products>(entity =>
             {
-                entity.HasNoKey();
-
+                entity.HasKey(e => e.id).HasName("PrimaryKey_id");
                 entity.ToTable("mediaappkt");
-
+                entity.Property(e => e.id).HasColumnName("id");
                 entity.Property(e => e.name)
                     .IsRequired()
                     .HasColumnName("name")
