@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { Route } from 'react-router';
+import { Redirect, Route } from 'react-router';
 import Layout from './components/Layout';
-import Home from './components/Home';
-import Counter from './components/Counter';
 import Product from './components/Product';
-
 import './custom.css'
+import "primeflex/primeflex.css";
+import AddProduct from './components/AddProduct';
+
 
 export default () => (
     <Layout>
-        <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/Products' component={Product} />
+        <Route exact path="/"><Redirect to="/product"/></Route>
+        <Route path='/product' component={Product} />
+        <Route path='/add-product' component={AddProduct} />
     </Layout>
 );
